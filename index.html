@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giordano Felici - Software Developer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* CSS Variables for consistent theming */
+        :root {
+            --primary-color: #0078D4;
+            --secondary-color: #2B2B2B;
+            --text-color: #333;
+            --light-bg: #f5f5f5;
+        }
+
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        /* Header Styles */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;           
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .header-content {
+            text-align: left;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+            color: #ffffff;
+            opacity: 0.9;
+        }
+
+        /* Navigation Styles */
+        .nav {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        /* Skills Grid Styles */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-card i {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Projects Grid Styles */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .project-content p {
+            margin-bottom: 1rem;
+        }
+
+        /* Project Link Styles */
+        .project-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        .project-link:hover {
+            color: #005ba1;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="logo.png" alt="Logo" class="logo">
+        <div class="header-content">
+            <h1>Giordano Felici</h1>
+            <p class="tagline">From complex challenges to innovative solutions</p>
+            <p>Full Stack Software Developer</p>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contatti</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>I am a passionate Full Stack Software Developer with expertise in both desktop and web application development. My focus is on creating efficient, user-friendly solutions that solve real-world problems.</p>
+    </section>
+
+    <section id="skills" class="section">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fab fa-python"></i>
+                <h3>Python Development</h3>
+                <p>Desktop applications with PyQt5/PyQt6, Web development with Django</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-database"></i>
+                <h3>Database Management</h3>
+                <p>PostgreSQL, SQLite, MSSQL</p>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-windows"></i>
+                <h3>C# Programmingt</h3>
+                <p>Foundation in C# programming and integrations with Python (Cython and IronPython Frameworks)</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-code"></i>
+                <h3>Web Technologies</h3>
+                <p>HTML, CSS, JavaScript</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fas fa-tools"></i>
+                <h3>System Administration</h3>
+                <p>Configuration of LAN/WAN networks, management of local servers, technical software support</p>
+            </div>
+            
+            
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project-card">
+                <img src="3435f800-b05c-433d-8ba1-1775883d9ab6-7.png" alt="LoanManager Pro">
+                <div class="project-content">
+                    <h3>LoanManager Pro</h3>
+                    <p>A comprehensive loan management application that enables the creation, management, and advanced analysis of loans. Features include loan creation, tracking, and detailed financial analysis.</p>
+
+                    <p><strong>Status:</strong> In final development stages</p>
+
+                    <p><strong>Technologies:</strong> Python, PyQt5, SQLite</p>
+
+                    <a href="loan.html" class="project-link">Learn More</a>
+
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="/api/placeholder/400/320" alt="M.A.X.">
+                <div class="project-content">
+                    <h3>M.A.X. (Management Accounting eXplorer)</h3>
+                    <p>A sophisticated accounting management system developed for 378Gradi. This desktop application features:</p>
+                    <ul>
+                        <li>Complete chart of accounts management</li>
+                        <li>Double-entry bookkeeping system</li>
+                        <li>Automated periodic transactions</li>
+                        <li>Financial statements generation</li>
+                        <li>What-if analysis capabilities</li>
+                        <li>Advanced reporting features</li>
+                    </ul>
+
+
+                    <p><strong>Status:</strong> Done. Project's duration: 4 months </p>
+
+                    <p><strong>Technologies:</strong> Python, PyQt5, PostgreSQL</p>
+                    <a href="https://www.378gradi.com/" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: bold; margin-top: 1rem; display: inline-block;">Learn more </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contatti</h2>
+        <div style="text-align: center; max-width: 600px; margin: 0 auto; line-height: 1.8;">
+            <p><strong>Telefono:</strong> <a href="tel:3249581869" style="color: var(--primary-color); text-decoration: none;">3249581869</a></p>
+            <p><strong>E-mail:</strong></p>
+            <p>
+                <a href="mailto:felicigiordano@gmail.com" style="color: var(--primary-color); text-decoration: none;">felicigiordano@gmail.com</a> <br>
+                <a href="mailto:felicigiordano@outlook.it" style="color: var(--primary-color); text-decoration: none;">felicigiordano@outlook.it</a>
+            </p>
+        </div>
+    </section>    
+
+    <footer class="footer">
+        <p>&copy; 2024 Giordano Felici. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll-based animations
+        window.addEventListener('scroll', () => {
+            const cards = document.querySelectorAll('.skill-card, .project-card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (cardTop < windowHeight * 0.8) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

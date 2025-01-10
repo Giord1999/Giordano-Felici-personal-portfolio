@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoanManager Pro - Comprehensive Loan Management Solution</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0078D4;
+            --secondary-color: #2B2B2B;
+            --text-color: #333;
+            --light-bg: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+            color: #ffffff;
+            opacity: 0.9;
+        }
+
+        .nav {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .section h3 {
+            color: var(--primary-color);
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.5rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card i {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+        }
+
+        .footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .code-example {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+
+        @media (max-width: 768px) {
+            .nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>LoanManager Pro</h1>
+        <p class="tagline">Advanced Loan Management and Analysis Solution</p>
+        <p>A comprehensive tool for financial professionals</p>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#technical">Technical Details</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+        </ul>
+    </nav>
+
+    <section id="overview" class="section">
+        <h2>Overview</h2>
+        <p>LoanManager Pro is a sophisticated desktop application designed for financial professionals to manage and analyze loans with precision. Built with Python and PyQt5, it combines powerful backend calculations with an intuitive user interface to provide comprehensive loan management capabilities.</p>
+    </section>
+
+    <section id="features" class="section">
+        <h2>Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-calculator"></i>
+                <h3>Loan Calculations</h3>
+                <ul>
+                    <li>French and Italian amortization methods</li>
+                    <li>Multiple payment frequencies (monthly, quarterly, semi-annual, annual)</li>
+                    <li>Flexible downpayment options</li>
+                    <li>TAEG (APR) calculations</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Analysis Tools</h3>
+                <ul>
+                    <li>Detailed amortization schedules</li>
+                    <li>Visual balance and interest charts</li>
+                    <li>Early payment impact analysis</li>
+                    <li>Loan comparison capabilities</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-database"></i>
+                <h3>Data Management</h3>
+                <ul>
+                    <li>SQLite database integration</li>
+                    <li>Loan data persistence</li>
+                    <li>Multiple loan tracking</li>
+                    <li>Loan consolidation features</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-undo"></i>
+                <h3>Advanced UI Features</h3>
+                <ul>
+                    <li>Undo/Redo functionality</li>
+                    <li>Interactive data visualization</li>
+                    <li>Intuitive form inputs</li>
+                    <li>Real-time calculations</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="technical" class="section">
+        <h2>Technical Specifications</h2>
+        
+        <h3>Backend (loan_analyst.py)</h3>
+        <p>The backend is built with Python and provides robust financial calculations including:</p>
+        <ul>
+            <li>numpy-financial for core financial computations</li>
+            <li>pandas for data manipulation and analysis</li>
+            <li>matplotlib and seaborn for data visualization</li>
+            <li>SQLite3 for database operations</li>
+            <li>Advanced TAEG calculations using numerical methods</li>
+        </ul>
+
+        <h3>Frontend (loan_app.py)</h3>
+        <p>The user interface is developed using PyQt5 and features:</p>
+        <ul>
+            <li>Modern and responsive design</li>
+            <li>Command pattern for undo/redo operations</li>
+            <li>Multiple specialized dialogs for different operations</li>
+            <li>Real-time data validation and error handling</li>
+            <li>Interactive data visualization tools</li>
+        </ul>
+    </section>
+
+    <section id="architecture" class="section">
+        <h2>Architecture Overview</h2>
+        
+        <h3>Core Components</h3>
+        <ul>
+            <li><strong>Loan Class:</strong> The central class managing all loan-related calculations and data</li>
+            <li><strong>LoanApp Class:</strong> The main application window handling user interactions</li>
+            <li><strong>Specialized Dialogs:</strong> Modular components for specific operations like loan creation, editing, and analysis</li>
+            <li><strong>Database Integration:</strong> Persistent storage system for loan data</li>
+        </ul>
+
+        <h3>Key Design Patterns</h3>
+        <ul>
+            <li><strong>Command Pattern:</strong> Used for implementing undo/redo functionality</li>
+            <li><strong>Observer Pattern:</strong> For real-time updates of UI elements</li>
+            <li><strong>Factory Pattern:</strong> In loan creation and management</li>
+            <li><strong>Singleton Pattern:</strong> For database connection management</li>
+        </ul>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 LoanManager Pro. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll-based animations
+        window.addEventListener('scroll', () => {
+            const cards = document.querySelectorAll('.feature-card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (cardTop < windowHeight * 0.8) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
