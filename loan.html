@@ -6,11 +6,17 @@
     <title>LoanManager Pro - Comprehensive Loan Management Solution</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        /* CSS Variables for Fluent Design */
         :root {
             --primary-color: #0078D4;
             --secondary-color: #2B2B2B;
-            --text-color: #333;
-            --light-bg: #f5f5f5;
+            --text-color: #323130;
+            --light-bg: #FAF9F8;
+            --card-bg: #FFFFFF;
+            --shadow-light: 0 2px 4px rgba(0,0,0,0.1);
+            --shadow-medium: 0 4px 8px rgba(0,0,0,0.12);
+            --shadow-hover: 0 8px 16px rgba(0,0,0,0.14);
+            --transition-speed: 0.2s;
         }
 
         * {
@@ -26,52 +32,76 @@
             background-color: var(--light-bg);
         }
 
+        /* Fluent Header */
         .header {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, #0078D4 0%, #106EBE 100%);
             color: white;
-            padding: 2rem;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
             text-align: center;
         }
 
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="rgba(255,255,255,0.03)"/></svg>');
+            opacity: 0.1;
+        }
+
         .header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
+            font-weight: 600;
+            position: relative;
         }
 
         .tagline {
-            font-size: 1.2rem;
-            font-style: italic;
-            margin-top: 0.5rem;
-            color: #ffffff;
+            font-size: 1.4rem;
             opacity: 0.9;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
         }
 
+        /* Fluent Navigation */
         .nav {
-            background-color: var(--secondary-color);
+            background-color: var(--card-bg);
             padding: 1rem;
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(10px);
         }
 
         .nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .nav a {
-            color: white;
+            color: var(--text-color);
             text-decoration: none;
             font-size: 1.1rem;
-            transition: color 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all var(--transition-speed);
         }
 
         .nav a:hover {
+            background-color: rgba(0, 120, 212, 0.1);
             color: var(--primary-color);
         }
 
+        /* Fluent Sections */
         .section {
             padding: 4rem 2rem;
             max-width: 1200px;
@@ -79,18 +109,21 @@
         }
 
         .section h2 {
-            color: var(--primary-color);
+            color: var(--text-color);
             margin-bottom: 2rem;
-            font-size: 2rem;
+            font-size: 2.2rem;
             text-align: center;
+            font-weight: 600;
         }
 
         .section h3 {
-            color: var(--primary-color);
+            color: var(--text-color);
             margin: 1.5rem 0 1rem 0;
             font-size: 1.5rem;
+            font-weight: 600;
         }
 
+        /* Fluent Feature Cards */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -99,27 +132,109 @@
         }
 
         .feature-card {
-            background: white;
-            padding: 1.5rem;
+            background: var(--card-bg);
+            padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            box-shadow: var(--shadow-light);
+            transition: all var(--transition-speed);
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
         }
 
         .feature-card i {
             color: var(--primary-color);
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 1rem;
+            background: rgba(0, 120, 212, 0.1);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
         }
 
         .feature-card h3 {
             margin-top: 0;
+            color: var(--text-color);
         }
 
+        .feature-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .feature-card ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .feature-card ul li::before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Technical Section Styling */
+        .tech-container {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            margin: 1rem 0;
+            transition: all var(--transition-speed);
+        }
+
+        .tech-container:hover {
+            box-shadow: var(--shadow-medium);
+        }
+
+        .tech-container ul {
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+
+        .tech-container ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .tech-container ul li::before {
+            content: '→';
+            color: var(--primary-color);
+            position: absolute;
+            left: -1.5rem;
+        }
+
+        /* Architecture Section */
+        .architecture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .architecture-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            transition: all var(--transition-speed);
+        }
+
+        .architecture-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Fluent Footer */
         .footer {
             background-color: var(--secondary-color);
             color: white;
@@ -128,19 +243,16 @@
             margin-top: 4rem;
         }
 
-        .code-example {
-            background-color: #f8f9fa;
-            padding: 1rem;
-            border-radius: 4px;
-            margin: 1rem 0;
-            font-family: monospace;
-            overflow-x: auto;
-        }
-
+        /* Responsive Design */
         @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
             .nav ul {
                 flex-direction: column;
                 align-items: center;
+                gap: 1rem;
             }
 
             .section {
@@ -167,7 +279,9 @@
 
     <section id="overview" class="section">
         <h2>Overview</h2>
-        <p>LoanManager Pro is a sophisticated desktop application designed for financial professionals to manage and analyze loans with precision. Built with Python and PyQt5, it combines powerful backend calculations with an intuitive user interface to provide comprehensive loan management capabilities.</p>
+        <div class="tech-container">
+            <p>LoanManager Pro is a sophisticated desktop application designed for financial professionals to manage and analyze loans with precision. Built with Python and PyQt5, it combines powerful backend calculations with an intuitive user interface to provide comprehensive loan management capabilities.</p>
+        </div>
     </section>
 
     <section id="features" class="section">
@@ -222,45 +336,55 @@
     <section id="technical" class="section">
         <h2>Technical Specifications</h2>
         
-        <h3>Backend (loan_analyst.py)</h3>
-        <p>The backend is built with Python and provides robust financial calculations including:</p>
-        <ul>
-            <li>numpy-financial for core financial computations</li>
-            <li>pandas for data manipulation and analysis</li>
-            <li>matplotlib and seaborn for data visualization</li>
-            <li>SQLite3 for database operations</li>
-            <li>Advanced TAEG calculations using numerical methods</li>
-        </ul>
+        <div class="tech-container">
+            <h3>Backend (loan_analyst.py)</h3>
+            <p>The backend is built with Python and provides robust financial calculations including:</p>
+            <ul>
+                <li>numpy-financial for core financial computations</li>
+                <li>pandas for data manipulation and analysis</li>
+                <li>matplotlib and seaborn for data visualization</li>
+                <li>SQLite3 for database operations</li>
+                <li>Advanced TAEG calculations using numerical methods</li>
+            </ul>
+        </div>
 
-        <h3>Frontend (loan_app.py)</h3>
-        <p>The user interface is developed using PyQt5 and features:</p>
-        <ul>
-            <li>Modern and responsive design</li>
-            <li>Command pattern for undo/redo operations</li>
-            <li>Multiple specialized dialogs for different operations</li>
-            <li>Real-time data validation and error handling</li>
-            <li>Interactive data visualization tools</li>
-        </ul>
+        <div class="tech-container">
+            <h3>Frontend (loan_app.py)</h3>
+            <p>The user interface is developed using PyQt5 and features:</p>
+            <ul>
+                <li>Modern and responsive design</li>
+                <li>Command pattern for undo/redo operations</li>
+                <li>Multiple specialized dialogs for different operations</li>
+                <li>Real-time data validation and error handling</li>
+                <li>Interactive data visualization tools</li>
+            </ul>
+        </div>
     </section>
 
     <section id="architecture" class="section">
         <h2>Architecture Overview</h2>
         
-        <h3>Core Components</h3>
-        <ul>
-            <li><strong>Loan Class:</strong> The central class managing all loan-related calculations and data</li>
-            <li><strong>LoanApp Class:</strong> The main application window handling user interactions</li>
-            <li><strong>Specialized Dialogs:</strong> Modular components for specific operations like loan creation, editing, and analysis</li>
-            <li><strong>Database Integration:</strong> Persistent storage system for loan data</li>
-        </ul>
+        <div class="architecture-grid">
+            <div class="architecture-card">
+                <h3>Core Components</h3>
+                <ul>
+                    <li><strong>Loan Class:</strong> The central class managing all loan-related calculations and data</li>
+                    <li><strong>LoanApp Class:</strong> The main application window handling user interactions</li>
+                    <li><strong>Specialized Dialogs:</strong> Modular components for specific operations</li>
+                    <li><strong>Database Integration:</strong> Persistent storage system for loan data</li>
+                </ul>
+            </div>
 
-        <h3>Key Design Patterns</h3>
-        <ul>
-            <li><strong>Command Pattern:</strong> Used for implementing undo/redo functionality</li>
-            <li><strong>Observer Pattern:</strong> For real-time updates of UI elements</li>
-            <li><strong>Factory Pattern:</strong> In loan creation and management</li>
-            <li><strong>Singleton Pattern:</strong> For database connection management</li>
-        </ul>
+            <div class="architecture-card">
+                <h3>Key Design Patterns</h3>
+                <ul>
+                    <li><strong>Command Pattern:</strong> Used for implementing undo/redo functionality</li>
+                    <li><strong>Observer Pattern:</strong> For real-time updates of UI elements</li>
+                    <li><strong>Factory Pattern:</strong> In loan creation and management</li>
+                    <li><strong>Singleton Pattern:</strong> For database connection management</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <footer class="footer">
@@ -268,7 +392,7 @@
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -278,17 +402,35 @@
             });
         });
 
-        // Add scroll-based animations
-        window.addEventListener('scroll', () => {
-            const cards = document.querySelectorAll('.feature-card');
-            cards.forEach(card => {
-                const cardTop = card.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                if (cardTop < windowHeight * 0.8) {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
+        // Reveal animations with Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
+        }, {
+            threshold: 0.2
+        });
+
+        // Observe all cards and sections
+        document.querySelectorAll('.feature-card, .tech-container, .architecture-card').forEach((el) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Add scroll-based animations for nav
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                nav.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+            }
         });
     </script>
 </body>
