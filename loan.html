@@ -213,6 +213,22 @@
             left: -1.5rem;
         }
 
+        .video-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            box-shadow: var(--shadow-medium);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .video-container video,
+        .video-container iframe {
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+        
+
         /* Architecture Section */
         .architecture-grid {
             display: grid;
@@ -281,6 +297,16 @@
         <h2>Overview</h2>
         <div class="tech-container">
             <p>LoanManager Pro is a sophisticated desktop/web application designed for financial professionals to manage and analyze loans with precision. Built with Python and PyQt5, it combines powerful backend calculations with an intuitive user interface to provide comprehensive loan management capabilities.</p>
+
+            <!-- Inizio del Video -->
+            <div class="video-container">
+                <video controls poster="thumbnail.jpg">
+                    <source src="video/loanmanager-demo.mp4" type="video/mp4">
+                    Il tuo browser non supporta il video HTML5.
+                </video>
+            </div>
+            <!-- Fine del Video -->
+    </div>
         </div>
     </section>
 
