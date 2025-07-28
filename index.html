@@ -144,6 +144,78 @@
             font-weight: 600;
         }
 
+        /* About Me Cards Styles */
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .about-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            transition: all var(--transition-speed);
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .about-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .about-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .about-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary-color);
+            border-radius: 4px 0 0 4px;
+        }
+
+        .about-card h3 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .about-card h3 i {
+            font-size: 1.2rem;
+        }
+
+        .about-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-color);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Fluent Skills Cards */
         .skills-grid {
             display: grid;
@@ -393,6 +465,15 @@
             .contact-grid {
                 grid-template-columns: 1fr;
             }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .about-card {
+                padding: 2rem;
+            }
         }
     </style>
 </head>
@@ -419,7 +500,22 @@
 
     <section id="about" class="section">
         <h2>About Me</h2>
-        <p>I am a passionate Full Stack Software Developer with expertise in both desktop and web application development. My focus is on creating efficient, user-friendly solutions that solve real-world problems to improve workflows and people's lives. I have a strong foundation in Python desktop and web development with PyQt5/PyQt6 and Django, and I am proficient in database management with PostgreSQL and SQLite My skills also include HTML, CSS and JavaScript programming, but also system administration. I believe in continuous learning and staying updated with the latest technologies to deliver as fast as possible the best solutions to my customers; as well as in living an healthy, slow-living lifestyle, work-life balance and personal growth.</p>
+        <div class="about-content">
+            <div class="about-card">
+                <h3><i class="fas fa-user"></i>About Me</h3>
+                <p>I am a passionate Full Stack Software Developer who transforms complex challenges into innovative, user-friendly solutions. With expertise in both desktop and web application development, I focus on creating efficient software that solves real-world problems and improves people's workflows and lives.</p>
+            </div>
+            
+            <div class="about-card">
+                <h3><i class="fas fa-code"></i>Technical Foundation</h3>
+                <p>My core competencies include Python development with PyQt5/PyQt6 and Django, database management with PostgreSQL and SQLite, and proficiency in HTML, CSS, JavaScript, and system administration. I also bring valuable experience in econometrics and data analysis to deliver comprehensive solutions.</p>
+            </div>
+            
+            <div class="about-card">
+                <h3><i class="fas fa-lightbulb"></i>My Approach</h3>
+                <p>I believe in continuous learning and staying updated with the latest technologies to deliver the best solutions as quickly as possible. Equally important to me is maintaining a healthy work-life balance, embracing slow-living principles, and focusing on personal growth alongside professional excellence.</p>
+            </div>
+        </div>
     </section>
 
     <section id="skills" class="section">
@@ -585,8 +681,8 @@
             threshold: 0.2
         });
 
-        // Observe all cards and sections
-        document.querySelectorAll('.skill-card, .project-card, .contact-item').forEach((el) => {
+        // Observe all cards and sections (updated to include about-card)
+        document.querySelectorAll('.skill-card, .project-card, .contact-item, .about-card').forEach((el) => {
             observer.observe(el);
         });
 
@@ -599,3 +695,6 @@
                 nav.style.backgroundColor = 'rgba(255, 255, 255, 1)';
             }
         });
+    </script>
+</body>
+</html>
