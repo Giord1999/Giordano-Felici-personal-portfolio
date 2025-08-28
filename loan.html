@@ -261,30 +261,56 @@
             box-shadow: var(--shadow-hover);
         }
 
-        /* Fluent Footer */
-        .footer {
-            background-color: var(--secondary-color);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
+        /* New styles for additional features */
+        .advanced-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
+        .module-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            transition: all var(--transition-speed);
+            border-left: 4px solid var(--primary-color);
+        }
 
-            .nav ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
+        .module-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+            border-left-width: 6px;
+        }
 
-            .section {
-                padding: 2rem 1rem;
-            }
+        .module-card h4 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 120, 212, 0.1) 0%, rgba(16, 110, 190, 0.05) 100%);
+            border: 1px solid rgba(0, 120, 212, 0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .capability-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .capability-item {
+            background: rgba(0, 120, 212, 0.05);
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--primary-color);
         }
 
         /* Reviews Section Styles */
@@ -499,6 +525,32 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Fluent Footer */
+        .footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -512,6 +564,7 @@
         <ul>
             <li><a href="#overview">Overview</a></li>
             <li><a href="#features">Features</a></li>
+            <li><a href="#advanced">Advanced Modules</a></li>
             <li><a href="#technical">Technical Details</a></li>
             <li><a href="#architecture">Architecture</a></li>
             <li><a href="#reviews">Reviews</a></li>
@@ -569,6 +622,21 @@
                     <li>Visual balance and interest charts</li>
                     <li>Early payment impact analysis</li>
                     <li>Loan comparison capabilities</li>
+                    <li>Monte Carlo simulations</li>
+                    <li>Probabilistic pricing models</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Guarantee Management</h3>
+                <ul>
+                    <li>Real guarantees tracking</li>
+                    <li>Personal guarantees management</li>
+                    <li>Government guarantees support</li>
+                    <li>Consortium guarantees</li>
+                    <li>Risk assessment automation</li>
+                    <li>Guarantee status monitoring</li>
                 </ul>
             </div>
 
@@ -594,6 +662,103 @@
                     <li>Real-time calculations</li>
                 </ul>
             </div>
+        </div>
+    </section>
+
+    <section id="advanced" class="section">
+        <h2>Advanced Modules</h2>
+
+        <div class="advanced-grid">
+            <div class="module-card">
+                <h4><i class="fas fa-users"></i> CRM Integration</h4>
+                <p>Complete customer relationship management system integrated with loan processing.</p>
+                <div class="capability-list">
+                    <div class="capability-item">Individual client management</div>
+                    <div class="capability-item">Corporate client tracking</div>
+                    <div class="capability-item">Interaction history</div>
+                    <div class="capability-item">Client segmentation</div>
+                    <div class="capability-item">Automated credit scoring</div>
+                    <div class="capability-item">Financial statement analysis</div>
+                </div>
+            </div>
+
+            <div class="module-card">
+                <h4><i class="fas fa-chart-pie"></i> Interactive Dashboard</h4>
+                <p>Real-time analytics and portfolio monitoring with interactive visualizations.</p>
+                <div class="capability-list">
+                    <div class="capability-item">Portfolio overview metrics</div>
+                    <div class="capability-item">Client segmentation maps</div>
+                    <div class="capability-item">Geographical distribution</div>
+                    <div class="capability-item">Risk assessment visualization</div>
+                    <div class="capability-item">Interest rate forecasting</div>
+                    <div class="capability-item">Auto-refresh capabilities</div>
+                </div>
+            </div>
+
+            <div class="module-card">
+                <h4><i class="fas fa-calculator"></i> Accounting Module</h4>
+                <p>Full double-entry accounting system for loan operations and financial management.</p>
+                <div class="capability-list">
+                    <div class="capability-item">Chart of accounts management</div>
+                    <div class="capability-item">Journal entry creation</div>
+                    <div class="capability-item">Trial balance generation</div>
+                    <div class="capability-item">Financial reports</div>
+                    <div class="capability-item">Account movement tracking</div>
+                    <div class="capability-item">Automated accounting workflows</div>
+                </div>
+            </div>
+
+            <div class="module-card">
+                <h4><i class="fas fa-tasks"></i> Task Management</h4>
+                <p>Integrated productivity system with focus sessions and project management.</p>
+                <div class="capability-list">
+                    <div class="capability-item">Task creation and tracking</div>
+                    <div class="capability-item">Project organization</div>
+                    <div class="capability-item">Focus session mode</div>
+                    <div class="capability-item">Kanban board view</div>
+                    <div class="capability-item">Reminder system</div>
+                    <div class="capability-item">Productivity analytics</div>
+                </div>
+            </div>
+
+            <div class="module-card">
+                <h4><i class="fas fa-dice"></i> Risk Analysis</h4>
+                <p>Advanced probabilistic modeling and risk assessment tools.</p>
+                <div class="capability-list">
+                    <div class="capability-item">Monte Carlo simulations</div>
+                    <div class="capability-item">Cash flow risk analysis</div>
+                    <div class="capability-item">Stress testing scenarios</div>
+                    <div class="capability-item">Default probability modeling</div>
+                    <div class="capability-item">Sensitivity analysis</div>
+                    <div class="capability-item">Value-at-Risk calculations</div>
+                </div>
+            </div>
+
+            <div class="module-card">
+                <h4><i class="fas fa-file-alt"></i> Reporting Engine</h4>
+                <p>Comprehensive reporting system with customizable templates and export options.</p>
+                <div class="capability-list">
+                    <div class="capability-item">Portfolio summary reports</div>
+                    <div class="capability-item">Comparative analysis</div>
+                    <div class="capability-item">Amortization schedules</div>
+                    <div class="capability-item">CRM analytics</div>
+                    <div class="capability-item">Forecast reports</div>
+                    <div class="capability-item">PDF/Excel export</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3><i class="fas fa-star"></i> Enterprise Features</h3>
+            <p>Advanced capabilities for financial institutions and large organizations:</p>
+            <ul>
+                <li><strong>Multi-user Support:</strong> Role-based access control and user management</li>
+                <li><strong>API Integration:</strong> RESTful APIs for third-party system integration</li>
+                <li><strong>Batch Processing:</strong> Automated bulk operations and scheduled tasks</li>
+                <li><strong>Audit Trail:</strong> Complete transaction logging and compliance tracking</li>
+                <li><strong>White Labeling:</strong> Customizable branding and interface themes</li>
+                <li><strong>Cloud Deployment:</strong> Scalable cloud infrastructure support</li>
+            </ul>
         </div>
     </section>
 
