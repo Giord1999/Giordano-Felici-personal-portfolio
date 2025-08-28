@@ -4,17 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoanManager Pro - Comprehensive Loan Management Solution</title>
-    <script type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
-    (function(){
-        emailjs.init({
-            publicKey: "kafdSYE7qqsuMAcFH",
-        });
-    })();
-    </script>
-    <script src="script.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         /* CSS Variables for Fluent Design */
@@ -272,114 +261,6 @@
             box-shadow: var(--shadow-hover);
         }
 
-        /* Contact Form Styles */
-        .contact-form-section {
-            background: var(--card-bg);
-            border-radius: 8px;
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: var(--shadow-light);
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--text-color);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 2px solid #e1e1e1;
-            border-radius: 4px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color var(--transition-speed);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-btn {
-            background: var(--primary-color);
-            color: white;
-            padding: 0.75rem 2rem;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all var(--transition-speed);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin: 0 auto;
-        }
-
-        .submit-btn:hover {
-            background: #106EBE;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .submit-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .form-message {
-            padding: 1rem;
-            border-radius: 4px;
-            margin-top: 1rem;
-            text-align: center;
-            display: none;
-        }
-
-        .form-message.success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-
-        .form-message.error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-
-        .loading-spinner {
-            width: 20px;
-            height: 20px;
-            border: 2px solid #ffffff;
-            border-top: 2px solid transparent;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
         /* Fluent Footer */
         .footer {
             background-color: var(--secondary-color);
@@ -405,6 +286,219 @@
                 padding: 2rem 1rem;
             }
         }
+
+        /* Reviews Section Styles */
+        .reviews-section {
+            background-color: var(--light-bg);
+            padding: 4rem 2rem;
+        }
+
+        .review-form {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #E5E5E5;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: all var(--transition-speed);
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .rating-input {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 0.2rem;
+        }
+
+        .star {
+            font-size: 1.5rem;
+            color: #ddd;
+            cursor: pointer;
+            transition: color var(--transition-speed);
+        }
+
+        .star:hover,
+        .star.active {
+            color: #FFD700;
+        }
+
+        .submit-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            font-weight: 600;
+        }
+
+        .submit-btn:hover {
+            background: #106EBE;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .reviews-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            margin-bottom: 1.5rem;
+            transition: all var(--transition-speed);
+        }
+
+        .review-card:hover {
+            box-shadow: var(--shadow-medium);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .reviewer-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .reviewer-details h4 {
+            margin: 0;
+            color: var(--text-color);
+            font-size: 1.1rem;
+        }
+
+        .review-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .review-rating {
+            display: flex;
+            gap: 0.2rem;
+        }
+
+        .review-content {
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .no-reviews {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .reviews-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design for Reviews */
+        @media (max-width: 768px) {
+            .review-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .reviews-stats {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -420,6 +514,7 @@
             <li><a href="#features">Features</a></li>
             <li><a href="#technical">Technical Details</a></li>
             <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#reviews">Reviews</a></li>
         </ul>
     </nav>
 
@@ -446,17 +541,12 @@
         <div class="features-grid">
             <div class="feature-card">
                 <i class="fas fa-calculator"></i>
-                <h3>Loan Calculations and management</h3>
+                <h3>Loan Calculations</h3>
                 <ul>
-                    <li>French and Italian amortization methods with both fixed and variable rates</li>
+                    <li>French and Italian amortization methods</li>
                     <li>Multiple payment frequencies (monthly, quarterly, semi-annual, annual)</li>
                     <li>Flexible downpayment options</li>
                     <li>TAEG (APR) calculations</li>
-                    <li>Payment registration system</li>
-                    <li>Leasing basic calculations</li>
-                    <li>Advanced integrated Customer Relationship Management system (CRM)</li>
-                    <li>Loan consolidation features</li>
-                    <li>Advanced integrated task management system to organize your daily working routine </li>
                 </ul>
             </div>
             
@@ -465,9 +555,9 @@
                 <h3>AI Chatbot Assistant</h3>
                 <ul>
                     <li>Local AI agent for tasks support</li>
-                    <li>Financial analysis and repetitive tasks automation</li>
+                    <li>Financial analysis automation</li>
                     <li>Chat-like interaction</li>
-                    <li>Fully integrated within the app functionality</li>
+                    <li>Fully integrated with the app function</li>
                 </ul>
             </div>
             
@@ -479,21 +569,17 @@
                     <li>Visual balance and interest charts</li>
                     <li>Early payment impact analysis</li>
                     <li>Loan comparison capabilities</li>
-                    <li>Leasing to loan comparison capabilities</li>
-                    <li>Leasing to leasing comparison capabilities</li>
-                    <li>Income statement and balance sheet analysis capabilities</li>
                 </ul>
             </div>
 
             <div class="feature-card">
                 <i class="fas fa-database"></i>
-                <h3>Data Management and security</h3>
+                <h3>Data Management</h3>
                 <ul>
                     <li>PostgreSQL database integration</li>
                     <li>Loan data persistence</li>
                     <li>Multiple loan tracking</li>
-                    <li>Parametrized queries against SQL injections</li>
-                    <li>Protection against phishing and password cracking via passkey</li>
+                    <li>Loan consolidation features</li>
                 </ul>
             </div>
 
@@ -568,46 +654,92 @@
         </div>
     </section>
 
+    <section id="reviews" class="reviews-section">
+        <div class="section">
+            <h2>User Reviews & Feedback</h2>
+            
+            <!-- Reviews Statistics -->
+            <div class="reviews-stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="total-reviews">0</div>
+                    <div class="stat-label">Total Reviews</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="average-rating">0.0</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="five-star-count">0</div>
+                    <div class="stat-label">5-Star Reviews</div>
+                </div>
+            </div>
 
-    <section id="contact" class="section">
-        <h2>Get in touch with me</h2>
-        
-        <!-- Contact Form -->
-        <div class="contact-form-section">
-            <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--text-color);">Send me a message</h3>
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required>
+            <!-- Review Form -->
+            <div class="review-form">
+                <h3>Leave a Review</h3>
+                <form id="review-form">
+                    <div class="form-group">
+                        <label for="reviewer-name">Your Name *</label>
+                        <input type="text" id="reviewer-name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reviewer-email">Email (optional)</label>
+                        <input type="email" id="reviewer-email" name="email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reviewer-role">Your Role</label>
+                        <select id="reviewer-role" name="role">
+                            <option value="">Select your role</option>
+                            <option value="Financial Advisor">Financial Advisor</option>
+                            <option value="Loan Officer">Loan Officer</option>
+                            <option value="Bank Manager">Bank Manager</option>
+                            <option value="Financial Analyst">Financial Analyst</option>
+                            <option value="Software Developer">Software Developer</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Rating *</label>
+                        <div class="rating-input">
+                            <div class="star-rating" id="star-rating">
+                                <span class="star" data-rating="1">★</span>
+                                <span class="star" data-rating="2">★</span>
+                                <span class="star" data-rating="3">★</span>
+                                <span class="star" data-rating="4">★</span>
+                                <span class="star" data-rating="5">★</span>
+                            </div>
+                            <span id="rating-text">Click to rate</span>
+                        </div>
+                        <input type="hidden" id="rating-value" name="rating" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="review-content">Your Review *</label>
+                        <textarea id="review-content" name="content" placeholder="Share your experience with LoanManager Pro..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Submit Review</button>
+                </form>
+            </div>
+
+            <!-- Reviews Display -->
+            <div class="reviews-container">
+                <h3>What Users Are Saying</h3>
+                <div id="reviews-list">
+                    <div class="no-reviews">
+                        <i> class="fas fa-comments" style="font-size: 3rem; color: #ddd; margin-bottom: 1rem;"></i>
+                        <p>No reviews yet. Be the first to share your experience!</p>
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="subject">Subject *</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" placeholder="Tell me about your project or how I can help you..." required></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn" id="submitBtn">
-                    <span class="btn-text">Send Message</span>
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-                
-                <div class="form-message" id="formMessage"></div>
-            </form>
+            </div>
         </div>
     </section>
-    
+
     <footer class="footer">
-        <p>&copy; 2025 LoanManager Pro. All rights reserved.</p>
+        <p>&copy; 2024 LoanManager Pro. All rights reserved.</p>
     </footer>
 
     <script>
@@ -651,6 +783,144 @@
                 nav.style.backgroundColor = 'rgba(255, 255, 255, 1)';
             }
         });
+        // Reviews functionality
+        let reviews = JSON.parse(localStorage.getItem('loanmanager-reviews')) || [];
+        let selectedRating = 0;
+
+        // Star rating functionality
+        const stars = document.querySelectorAll('.star');
+        const ratingText = document.getElementById('rating-text');
+        const ratingValue = document.getElementById('rating-value');
+
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                selectedRating = parseInt(star.dataset.rating);
+                ratingValue.value = selectedRating;
+                updateStarDisplay();
+                updateRatingText();
+            });
+
+            star.addEventListener('mouseenter', () => {
+                const hoverRating = parseInt(star.dataset.rating);
+                highlightStars(hoverRating);
+            });
+        });
+
+        document.getElementById('star-rating').addEventListener('mouseleave', () => {
+            updateStarDisplay();
+        });
+
+        function highlightStars(rating) {
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        function updateStarDisplay() {
+            highlightStars(selectedRating);
+        }
+
+        function updateRatingText() {
+            const ratingTexts = ['', 'Poor', 'Fair', 'Good', 'Very Good', 'Excellent'];
+            ratingText.textContent = ratingTexts[selectedRating] || 'Click to rate';
+        }
+
+        // Form submission
+        document.getElementById('review-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const review = {
+                id: Date.now(),
+                name: formData.get('name'),
+                email: formData.get('email'),
+                role: formData.get('role'),
+                rating: parseInt(formData.get('rating')),
+                content: formData.get('content'),
+                date: new Date().toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                })
+            };
+
+            reviews.unshift(review);
+            localStorage.setItem('loanmanager-reviews', JSON.stringify(reviews));
+            
+            // Reset form
+            e.target.reset();
+            selectedRating = 0;
+            updateStarDisplay();
+            updateRatingText();
+            
+            // Update display
+            displayReviews();
+            updateStats();
+            
+            // Show success message
+            alert('Thank you for your review!');
+        });
+
+        function displayReviews() {
+            const reviewsList = document.getElementById('reviews-list');
+            
+            if (reviews.length === 0) {
+                reviewsList.innerHTML = `
+                    <div class="no-reviews">
+                        <i class="fas fa-comments" style="font-size: 3rem; color: #ddd; margin-bottom: 1rem;"></i>
+                        <p>No reviews yet. Be the first to share your experience!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            reviewsList.innerHTML = reviews.map(review => `
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                ${review.name.charAt(0).toUpperCase()}
+                            </div>
+                            <div class="reviewer-details">
+                                <h4>${review.name}</h4>
+                                ${review.role ? `<div class="review-date">${review.role}</div>` : ''}
+                            </div>
+                        </div>
+                        <div>
+                            <div class="review-rating">
+                                ${Array.from({length: 5}, (_, i) => 
+                                    `<span class="star ${i < review.rating ? 'active' : ''}">★</span>`
+                                ).join('')}
+                            </div>
+                            <div class="review-date">${review.date}</div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        ${review.content}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateStats() {
+            const totalReviews = reviews.length;
+            const averageRating = totalReviews > 0 ? 
+                (reviews.reduce((sum, review) => sum + review.rating, 0) / totalReviews).toFixed(1) : 
+                '0.0';
+            const fiveStarCount = reviews.filter(review => review.rating === 5).length;
+
+            document.getElementById('total-reviews').textContent = totalReviews;
+            document.getElementById('average-rating').textContent = averageRating;
+            document.getElementById('five-star-count').textContent = fiveStarCount;
+        }
+
+        // Initialize reviews display
+        displayReviews();
+        updateStats();
     </script>
 </body>
 </html>
